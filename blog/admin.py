@@ -10,4 +10,6 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
 
 
-admin.site.register(Article, ArticleAdmin)
+admin.site.register(Article, ArticleAdmin) # 像admin注册这个model
+admin.site.site_title = 'dadada'
+admin.site.site_header = 'dadada'

@@ -130,5 +130,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),  # 主文件下静态文件
-    os.path.join(BASE_DIR, "blog", "statics"), # 项目blog文件下静态文件
+    os.path.join(BASE_DIR, "blog", "statics"),  # 项目blog文件下静态文件
 )
