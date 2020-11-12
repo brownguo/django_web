@@ -133,3 +133,30 @@ STATICFILES_DIRS = (
     # os.path.join(BASE_DIR, '/static/'),  # 主文件下静态文件
     os.path.join(BASE_DIR, "blog", "static"),  # 项目blog文件下静态文件
 )
+
+# SIMPLEUI_HOME_PAGE = 'https://www.baidu.com'
+# SIMPLEUI_HOME_TITLE = '百度一下你就知道'
+# SIMPLEUI_HOME_ICON = 'fa fa-user'
+
+# 关闭登录页粒子动画
+SIMPLEUI_LOGIN_PARTICLES = False
+
+# 服务器信息
+SIMPLEUI_HOME_INFO = False
+
+# 开启快速操作
+SIMPLEUI_HOME_QUICK = True
+
+# 不适用分析
+SIMPLEUI_ANALYSIS = False
+
+# 离线模式
+SIMPLEUI_STATIC_OFFLINE = True
+
+# 菜单图标
+# SIMPLEUI_ICON = {
+#     '系统管理': 'fab fa-apple',
+#     '员工管理': 'fas fa-user-tie'
+# }
+
+SIMPLEUI_LOGO = STATIC_URL + "qiaohu.jpeg"
