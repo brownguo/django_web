@@ -1,14 +1,50 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.contrib.auth.models import AnonymousUser
 
-class Article(models.Model):
-
-    title = models.CharField('标题', max_length=70)
-    body = models.TextField('内容', max_length=200, blank=True)
-    created_time = models.DateTimeField('发布时间')
+# 分类
+class Category(models.Model):
+    name = models.CharField('分类', max_length=50)
 
     class Meta:
-        verbose_name = '文章'
-        verbose_name_plural = '文章'
+        db_table = 'blog_category'
+        verbose_name = '分类'
+        verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.title
+        return self.name
+
+
+# 标签
+class Tags(models.Model):
+    name = models.CharField('标签', max_length=100)
+
+    class Meta:
+        db_table = 'blog_tags'
+        verbose_name = '标签'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
+
+
+# 文章
+class Article(models.Model):
+    title = models.CharField('标题', max_length=70)
+    intro = models.TextField('摘要', max_length=200, blank=True)
+    body = models.TextField()
+
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='分类', default='1')
+    tags = models.ManyToManyField(Tags, blank=True)
+    # 存储比较短的字符串可以使用 CharField，但对于文章的正文来说可能会是一大段文本，因此使用 TextField 来存储大段文本。
+    body = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='作者', default='admin')
+    created_time = models.DateTimeField('发布时间', auto_now_add=True)
+
+    class Meta:
+        db_table = 'blog_article'
+        verbose_name = '文章列表'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return '%s - %s' % (self.title, self.created_time)
