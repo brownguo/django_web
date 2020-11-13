@@ -19,6 +19,7 @@ from blog import views as blogViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blogViews.HelloWorld),  # blog里的helloworld
+    path('', admin.site.urls),
+    # path('', blogViews.HelloWorld),  # blog里的helloworld
     path('article/<int:id>', blogViews.Article),  # blog里的article
 ]
