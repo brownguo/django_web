@@ -15,5 +15,5 @@ admin.site.register(Tags)
 admin.site.register(Article)
 admin.site.register(Category)
 
-admin.site.site_title = 'dadada'
-admin.site.site_header = 'dadada'
+admin.site.site_title = '才智小天地'
+admin.site.site_header = '才智小天地'
