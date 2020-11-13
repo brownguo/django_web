@@ -13,7 +13,7 @@ def HelloWorld(request):
     return HttpResponse(json.dumps(ctx))
 
 
-def Article(request,id):
+def Article(request, id):
     blog_article = models.Article.objects.all().order_by('-id')
     context = {
         'blog_article': blog_article,
