@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'simpleui',  # 一个第三方的UI库
+    'DjangoUeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
